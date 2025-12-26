@@ -1,10 +1,21 @@
 # Game Store - Platform Jual Beli Game Digital
 
+Dibuat oleh:
+**SUANDY - 221011400816 - TPLP020**
+
 ## Deskripsi Proyek
 
 **Game Store** adalah sebuah aplikasi web platform _e-commerce_ yang dirancang khusus untuk para gamer. Aplikasi ini memungkinkan pengguna untuk tidak hanya membeli game digital tetapi juga menjual game mereka sendiri dalam bentuk "listing". Platform ini memfasilitasi seluruh siklus transaksi, mulai dari pendaftaran pengguna, pembuatan dan pengelolaan listing, hingga proses pemesanan dan konfirmasi.
 
 Aplikasi ini juga dilengkapi dengan panel administrasi yang kuat, memberikan kontrol penuh kepada admin untuk mengelola pengguna, memantau laporan penjualan, dan mengatur status pesanan. Arsitekturnya dibangun menggunakan tumpukan teknologi web klasik (PHP, MySQL, HTML/CSS/JS), menjadikannya solusi yang mudah dipahami dan dikelola.
+
+## Video Demo
+
+Tonton demo lengkap aplikasi di YouTube:
+
+[![Demo Aplikasi Game Store](https://img.youtube.com/vi/7wZFoGxL4ho/0.jpg)](https://youtu.be/7wZFoGxL4ho?si=SjvHtrYC5zrwEAbx)
+
+Link: [https://youtu.be/7wZFoGxL4ho](https://youtu.be/7wZFoGxL4ho)
 
 ## Teknologi yang Digunakan
 
