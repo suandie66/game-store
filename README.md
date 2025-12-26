@@ -43,12 +43,11 @@ c:\xampp\htdocs\game-store\
 └─── uploads/               # Direktori untuk menyimpan gambar yang di-upload pengguna (cover game)
 ```
 
-## Tata Cara Penggunaan & Tampilan Aplikasi
+## Detail Fitur & Tampilan Aplikasi
 
-Bagian ini menjelaskan secara mendalam setiap fitur utama dari aplikasi, lengkap dengan skenario, prasyarat, dan alur proses untuk memberikan pemahaman yang komprehensif.
+Bagian ini menjelaskan secara detail setiap fitur utama dari aplikasi, lengkap dengan prasyarat dan alur prosesnya.
 
 ---
-
 
 ### Halaman Utama (`index.php`)
 
@@ -56,18 +55,16 @@ Bagian ini menjelaskan secara mendalam setiap fitur utama dari aplikasi, lengkap
 
 Halaman ini adalah fasad digital dari Game Store, titik pertama interaksi bagi semua pengunjung. Desainnya bersih dan terfokus untuk memandu pengguna ke area-area paling relevan dari situs.
 
--   **Skenario Pengguna:** Seorang pengunjung bernama 'Andi' baru pertama kali mendengar tentang situs ini. Ia membukanya untuk melihat-lihat seperti apa platformnya, apa saja yang ditawarkan, dan bagaimana cara kerjanya.
 -   **Prasyarat:** Tidak ada. Halaman ini sepenuhnya publik dan dapat diakses oleh siapa saja dengan koneksi internet.
 -   **Detail Elemen UI:**
     -   **Header Navigasi:** Berisi link-link vital: `Beranda` untuk kembali ke halaman ini, `Listing` untuk menjelajahi semua produk, serta `Login` dan `Register` untuk manajemen akun.
     -   **Konten Utama:** Biasanya menampilkan daftar produk unggulan, promosi khusus, atau game yang baru ditambahkan untuk menarik perhatian pengguna.
--   **Alur Proses & Hasil:**
+-   **Alur Proses &amp; Hasil:**
     1.  Pengguna membuka URL situs.
     2.  Halaman Beranda dimuat, menampilkan navigasi utama.
     3.  Pengguna dapat mengklik `Listing` untuk langsung melihat katalog produk, atau mengklik `Login`/`Register` jika ingin berinteraksi lebih jauh.
 
 ---
-
 
 ### Registrasi Pengguna (`register.php`)
 
@@ -75,21 +72,36 @@ Halaman ini adalah fasad digital dari Game Store, titik pertama interaksi bagi s
 
 Fitur ini adalah gerbang bagi pengunjung untuk menjadi anggota komunitas Game Store. Prosesnya dirancang agar cepat dan mudah.
 
--   **Skenario Pengguna:** 'Andi' tertarik untuk menjual beberapa game miliknya. Untuk melakukan itu, ia perlu membuat akun terlebih dahulu.
 -   **Prasyarat:** Pengguna harus memiliki alamat email yang aktif dan unik (belum terdaftar di sistem).
 -   **Detail Elemen UI:**
     -   `Username`: Nama unik yang akan menjadi identitas pengguna di platform.
     -   `Email`: Digunakan untuk komunikasi dan notifikasi. Harus valid.
     -   `Password`: Kata sandi untuk mengamankan akun. Sebaiknya mengikuti standar keamanan minimum.
     -   `Tombol Register`: Tombol final untuk mengirimkan data pendaftaran.
--   **Alur Proses & Hasil:**
-    1.  'Andi' mengklik "Register" di menu utama.
-    2.  Ia mengisi semua kolom pada formulir.
-    3.  **Jika Sukses:** Setelah menekan "Register", data divalidasi oleh sistem. Akun baru dibuat, dan 'Andi' biasanya akan dialihkan ke halaman Login untuk masuk dengan akun barunya.
-    4.  **Jika Gagal:** Jika username atau email sudah ada, atau jika ada data yang tidak valid, sistem akan menampilkan pesan error di halaman yang sama, meminta 'Andi' untuk memperbaiki isiannya.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna mengklik "Register" di menu utama dan mengisi semua kolom pada formulir.
+    2.  **Jika Sukses:** Setelah menekan "Register", data divalidasi. Akun baru dibuat, dan pengguna akan dialihkan ke halaman Login.
+    3.  **Jika Gagal:** Jika username/email sudah ada atau data tidak valid, sistem akan menampilkan pesan error di halaman yang sama.
 
 ---
 
+### Login Pengguna (`login.php`)
+
+![Login](img/menu_login.png)
+
+Halaman ini adalah gerbang masuk bagi pengguna yang sudah terdaftar untuk mengakses fungsionalitas khusus anggota.
+
+-   **Prasyarat:** Akun pengguna harus sudah ada dan aktif di database.
+-   **Detail Elemen UI:**
+    -   `Username`: Kolom untuk memasukkan username unik yang telah didaftarkan.
+    -   `Password`: Kolom untuk memasukkan kata sandi rahasia yang terasosiasi dengan akun tersebut.
+    -   `Tombol Login`: Tombol untuk memverifikasi kredensial yang dimasukkan.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna mengakses halaman Login dan memasukkan kredensialnya.
+    2.  **Jika Sukses:** Sistem memvalidasi kredensial, membuat sesi (session), dan mengarahkan pengguna ke halaman utama. Menu navigasi akan diperbarui.
+    3.  **Jika Gagal:** Sistem akan menampilkan pesan error "Kredensial tidak valid" dan proses login tidak dilanjutkan.
+
+---
 
 ### Tampilan Listing Game (`listing.php`)
 
@@ -97,56 +109,159 @@ Fitur ini adalah gerbang bagi pengunjung untuk menjadi anggota komunitas Game St
 
 Ini adalah etalase utama dari Game Store, tempat semua produk yang dijual oleh komunitas ditampilkan dalam format galeri yang mudah dinavigasi.
 
--   **Skenario Pengguna:** 'Andi' (yang kini sudah login) ingin melihat game apa saja yang sedang dijual untuk mencari inspirasi harga sebelum menjual game miliknya.
--   **Prasyarat:** Halaman ini dapat diakses publik, namun fungsionalitas seperti membeli memerlukan pengguna untuk login.
+-   **Prasyarat:** Halaman ini dapat diakses publik.
 -   **Detail Elemen UI:**
-    -   **Kartu Produk:** Setiap game ditampilkan sebagai "kartu" yang berisi informasi esensial: gambar sampul, nama game, dan harga.
-    -   **Link Detail:** Seluruh area kartu biasanya dapat diklik, berfungsi sebagai link untuk menuju halaman `listing_detail.php`.
--   **Alur Proses & Hasil:**
+    -   **Kartu Produk:** Setiap game ditampilkan sebagai "kartu" yang berisi gambar sampul, nama, dan harga.
+    -   **Link Detail:** Seluruh area kartu dapat diklik untuk menuju halaman detail produk.
+-   **Alur Proses &amp; Hasil:**
     1.  Pengguna mengklik menu "Listing".
     2.  Sistem mengambil semua data produk dari database dan menampilkannya.
-    3.  Pengguna dapat scroll untuk melihat semua penawaran. Jika ia menemukan game yang menarik, ia akan mengkliknya untuk melihat detail lebih lanjut.
+    3.  Pengguna dapat scroll dan mengklik game yang menarik untuk melihat detailnya.
 
 ---
 
+### Detail Listing Game (`listing_detail.php`)
+
+![Detail Listing](img/menu_listing_detail.png)
+
+Halaman ini adalah pandangan mendalam terhadap satu item spesifik, memberikan informasi yang kaya dan lengkap kepada calon pembeli.
+
+-   **Prasyarat:** Tidak ada. Halaman ini publik.
+-   **Detail Elemen UI:**
+    -   **Gambar Produk:** Tampilan besar dari gambar sampul game.
+    -   **Informasi Penjual:** Nama penjual ditampilkan, berfungsi sebagai link ke profil publiknya.
+    -   **Deskripsi &amp; Harga:** Penjelasan detail dan harga yang ditetapkan oleh penjual.
+    -   **Tombol Aksi (Beli/Pesan):** Tombol utama yang memulai alur proses pembelian.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna membaca informasi yang tersedia.
+    2.  Jika tertarik, pengguna mengklik tombol "Beli".
+    3.  Sistem akan membawanya ke alur konfirmasi pesanan. Jika belum login, pengguna akan diarahkan ke halaman Login terlebih dahulu.
+
+---
+
+### Detail Listing (Perspektif Penjual)
+
+![Detail Listing User](img/menu_listing_detail_user.png)
+
+Saat melihat listing milik sendiri, pengguna diberikan alat untuk mengelolanya secara langsung.
+
+-   **Prasyarat:** Pengguna harus login dan menjadi pemilik dari listing yang sedang dilihat.
+-   **Detail Elemen UI:**
+    -   **Tombol `Edit Listing`:** Mengarahkan pengguna ke halaman formulir edit.
+    -   **Tombol `Delete Listing`:** Tombol untuk menghapus listing ini secara permanen.
+-   **Alur Proses &amp; Hasil:**
+    1.  Sistem mengenali pengguna sebagai pemilik dan menampilkan tombol `Edit` serta `Delete`.
+    2.  Pengguna dapat mengklik tombol tersebut untuk mengelola listingnya.
+
+---
 
 ### Membuat Listing Baru (`create_listing.php`)
 
 ![Buat Listing Baru](img/menu_buat_listing_baru.png)
 
-Ini adalah fitur inti bagi penjual. Halaman ini menyediakan formulir lengkap bagi pengguna untuk mempublikasikan game yang ingin mereka jual.
+Fitur inti bagi penjual untuk mempublikasikan game yang ingin mereka jual.
 
--   **Skenario Pengguna:** 'Andi' siap menjual game pertamanya. Ia menavigasi ke halaman ini untuk membuat penawarannya.
 -   **Prasyarat:** Pengguna **wajib** dalam keadaan login.
 -   **Detail Elemen UI:**
-    -   `Nama Game`: Judul yang jelas dan informatif.
-    -   `Deskripsi`: Area teks untuk menjelaskan kondisi game, bonus, atau cerita menarik di baliknya. Deskripsi yang baik meningkatkan peluang penjualan.
-    -   `Harga`: Kolom untuk memasukkan harga jual.
-    -   `Upload Gambar`: Fitur untuk mengunggah gambar sampul (cover) game. Visual adalah kunci.
-    -   `Tombol Submit`: Mengirimkan semua data untuk dibuat menjadi sebuah listing publik.
--   **Alur Proses & Hasil:**
-    1.  'Andi' mengisi semua detail pada formulir.
-    2.  Ia mengunggah sebuah gambar dari komputernya.
-    3.  **Jika Sukses:** Setelah menekan "Submit", sistem memvalidasi data, menyimpan informasi ke database, dan meng-copy file gambar ke direktori `uploads/`. Listing baru tersebut kini akan muncul di halaman "Listing" utama. 'Andi' mungkin akan dialihkan ke halaman detail produk barunya.
-    4.  **Jika Gagal:** Jika ada kolom wajib yang kosong atau data tidak valid, halaman akan memuat ulang dengan pesan error yang spesifik.
+    -   `Nama Game`, `Deskripsi`, `Harga`: Kolom-kolom untuk detail produk.
+    -   `Upload Gambar`: Fitur untuk mengunggah gambar sampul.
+    -   `Tombol Submit`: Mempublikasikan listing.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna mengisi formulir dan mengunggah gambar.
+    2.  Setelah "Submit", data disimpan dan listing baru akan muncul di galeri utama.
+    3.  Jika gagal (data tidak lengkap), halaman akan menampilkan pesan error.
 
 ---
 
+### Mengedit Listing (`edit_listing.php`)
+
+![Edit Listing](img/menu_edit_listing.png)
+
+Halaman ini memungkinkan penjual untuk memperbarui informasi pada listing yang sudah ada.
+
+-   **Prasyarat:** Pengguna harus datang dari halaman detail listing miliknya dengan mengklik tombol "Edit".
+-   **Detail Elemen UI:** Formulir identik dengan halaman pembuatan, namun sudah terisi dengan data saat ini.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna mengubah informasi yang diperlukan.
+    2.  Setelah menekan "Simpan Perubahan", data di database akan diperbarui.
+    3.  Pengguna diarahkan kembali ke halaman detail produknya yang sudah ter-update.
+
+---
+
+### Halaman Pesanan Pengguna (`orders.php`)
+
+![Order User](img/menu_order_user.png)
+
+Arsip digital pribadi bagi pengguna untuk melacak semua riwayat transaksi pembelian.
+
+-   **Prasyarat:** Pengguna harus login.
+-   **Detail Elemen UI:**
+    -   **Tabel Riwayat Pesanan:** Daftar item yang dibeli, ID pesanan, tanggal, dan status pesanan.
+    -   **Status Pesanan:** Indikator visual (`Menunggu`, `Diproses`, `Selesai`) yang di-update oleh admin.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna mengakses halaman "Pesanan Saya".
+    2.  Halaman menampilkan daftar transaksi untuk pemantauan status.
+
+---
 
 ### Panel Admin - Manajemen Pengguna (`admin_users.php`)
 
 ![Manajemen Pengguna](img/menu_manajemen_pengguna.png)
 
-Ini adalah pusat kendali bagi administrator untuk mengelola seluruh basis data pengguna. Fitur ini krusial untuk menjaga keamanan dan ketertiban platform.
+Pusat kendali bagi administrator untuk mengelola seluruh basis data pengguna.
 
--   **Skenario Pengguna:** Seorang admin bernama 'Citra' mendapat laporan tentang aktivitas mencurigakan dari akun 'Andi'. Ia perlu memeriksa detail akun tersebut dan mengambil tindakan jika perlu.
--   **Prasyarat:** Pengguna harus login dengan akun yang memiliki hak akses sebagai `administrator`.
+-   **Prasyarat:** Login dengan akun berhak akses `administrator`.
 -   **Detail Elemen UI:**
-    -   **Tabel Pengguna:** Menampilkan daftar semua pengguna beserta detail kunci seperti `username`, `email`, dan `role`.
-    -   **Fungsi Pencarian:** Memungkinkan admin untuk menemukan pengguna spesifik dengan cepat.
-    -   **Tombol `Edit`:** Mengarahkan ke halaman untuk mengubah data pengguna (misalnya, mereset password atau mengubah role).
-    -   **Tombol `Delete`:** Menghapus pengguna dari sistem secara permanen (biasanya didahului oleh dialog konfirmasi).
--   **Alur Proses & Hasil:**
-    1.  'Citra' login dan masuk ke Panel Admin, lalu memilih menu "Manajemen Pengguna".
-    2.  Ia menggunakan pencarian untuk menemukan 'Andi'.
-    3.  Dari tabel, 'Citra' bisa memilih untuk meng-edit (misalnya, menonaktifkan akun dengan mengubah rolenya) atau langsung menghapus akun 'Andi' jika terbukti melanggar aturan. Setiap tindakan akan memberikan feedback visual tentang keberhasilannya.
+    -   **Tabel Pengguna:** Menampilkan daftar semua pengguna.
+    -   **Fungsi Pencarian:** Untuk menemukan pengguna spesifik.
+    -   **Tombol `Edit` &amp; `Delete`:** Untuk mengubah atau menghapus data pengguna.
+-   **Alur Proses &amp; Hasil:**
+    1.  Admin masuk ke menu "Manajemen Pengguna".
+    2.  Admin dapat mencari pengguna, lalu meng-edit atau menghapus akun sesuai kebutuhan.
+
+---
+
+### Panel Admin - Manajemen Pesanan
+
+![Order Admin](img/menu_order_admin.png)
+
+Area terpusat bagi admin untuk memproses dan mengelola semua pesanan yang masuk.
+
+-   **Prasyarat:** Login sebagai `administrator`.
+-   **Detail Elemen UI:**
+    -   **Tabel Pesanan Global:** Menampilkan semua pesanan dari semua pengguna.
+    -   **Aksi Perubahan Status:** Dropdown atau tombol untuk mengubah status pesanan.
+-   **Alur Proses &amp; Hasil:**
+    1.  Admin menemukan pesanan yang relevan.
+    2.  Admin mengubah statusnya (misal, dari "Diproses" menjadi "Selesai"). Perubahan ini akan terlihat oleh pengguna.
+
+---
+
+### Panel Admin - Laporan Penjualan (`admin_sales.php`)
+
+![Laporan](img/menu_laporan.png)
+
+Fitur intelijen bisnis yang menyajikan data penjualan dalam bentuk visual.
+
+-   **Prasyarat:** Login sebagai `administrator`.
+-   **Detail Elemen UI:**
+    -   **Grafik &amp; Ringkasan:** Menampilkan total pendapatan, jumlah transaksi, dan produk terlaris.
+-   **Alur Proses &amp; Hasil:**
+    1.  Admin membuka halaman "Laporan".
+    2.  Sistem secara otomatis mengagregasi data transaksi menjadi wawasan yang mudah dibaca untuk analisis bisnis.
+
+---
+
+### Jelajahi Akun Pengguna
+
+![Jelajahi Akun](img/menu_jelajahi_akun.png)
+
+Fitur sosial untuk melihat profil publik penjual beserta semua produk yang mereka tawarkan.
+
+-   **Prasyarat:** Tidak ada, profil publik bisa diakses siapa saja.
+-   **Detail Elemen UI:**
+    -   **Info Profil:** Nama pengguna penjual.
+    -   **Galeri Listing Pengguna:** Etalase mini khusus untuk produk-produk dari satu penjual.
+-   **Alur Proses &amp; Hasil:**
+    1.  Pengguna mengklik nama penjual di halaman detail produk.
+    2.  Pengguna diarahkan ke halaman profil penjual untuk melihat semua penawarannya.
