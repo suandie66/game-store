@@ -1,0 +1,5 @@
+-- This migration is obsolete and should not be run.
+-- The `listings.image` column is no longer used. The application now correctly
+-- uses the `listing_images` table to determine the primary image.
+-- If your 'listings' table has an 'image' column, you can safely remove it.
+-- ALTER TABLE listings DROP COLUMN image;
