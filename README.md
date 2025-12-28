@@ -9,6 +9,10 @@ Dibuat oleh:
 
 Aplikasi ini juga dilengkapi dengan panel administrasi yang kuat, memberikan kontrol penuh kepada admin untuk mengelola pengguna, memantau laporan penjualan, dan mengatur status pesanan. Arsitekturnya dibangun menggunakan tumpukan teknologi web klasik (PHP, MySQL, HTML/CSS/JS), menjadikannya solusi yang mudah dipahami dan dikelola.
 
+## Admin Login
+username : admin@gamestore.com
+password : admin123
+
 ## Video Demo
 
 Tonton demo lengkap aplikasi di YouTube:
