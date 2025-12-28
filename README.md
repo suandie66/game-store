@@ -135,6 +135,24 @@ Ini adalah etalase utama dari Game Store, tempat semua produk yang dijual oleh k
 
 ![Detail Listing](img/menu_listing_detail.png)
 
+Saat melihat listing milik sendiri, pengguna diberikan alat untuk mengelolanya secara langsung.
+
+-   **Prasyarat:** Pengguna harus login dan menjadi pemilik dari listing yang sedang dilihat.
+-   **Detail Elemen UI:**
+    -   **Tombol `Edit Listing`:** Mengarahkan pengguna ke halaman formulir edit.
+    -   **Tombol `Delete Listing`:** Tombol untuk menghapus listing ini secara permanen.
+-   **Alur Proses &amp; Hasil:**
+    1.  Sistem mengenali pengguna sebagai pemilik dan menampilkan tombol `Edit` serta `Delete`.
+    2.  Pengguna dapat mengklik tombol tersebut untuk mengelola listingnya.
+
+---
+
+
+### Detail Listing (Perspektif Pembeli)
+
+![Detail Listing User](img/menu_listing_detail_user.png)
+
+
 Halaman ini adalah pandangan mendalam terhadap satu item spesifik, memberikan informasi yang kaya dan lengkap kepada calon pembeli.
 
 -   **Prasyarat:** Tidak ada. Halaman ini publik.
@@ -147,22 +165,6 @@ Halaman ini adalah pandangan mendalam terhadap satu item spesifik, memberikan in
     1.  Pengguna membaca informasi yang tersedia.
     2.  Jika tertarik, pengguna mengklik tombol "Beli".
     3.  Sistem akan membawanya ke alur konfirmasi pesanan. Jika belum login, pengguna akan diarahkan ke halaman Login terlebih dahulu.
-
----
-
-### Detail Listing (Perspektif Penjual)
-
-![Detail Listing User](img/menu_listing_detail_user.png)
-
-Saat melihat listing milik sendiri, pengguna diberikan alat untuk mengelolanya secara langsung.
-
--   **Prasyarat:** Pengguna harus login dan menjadi pemilik dari listing yang sedang dilihat.
--   **Detail Elemen UI:**
-    -   **Tombol `Edit Listing`:** Mengarahkan pengguna ke halaman formulir edit.
-    -   **Tombol `Delete Listing`:** Tombol untuk menghapus listing ini secara permanen.
--   **Alur Proses &amp; Hasil:**
-    1.  Sistem mengenali pengguna sebagai pemilik dan menampilkan tombol `Edit` serta `Delete`.
-    2.  Pengguna dapat mengklik tombol tersebut untuk mengelola listingnya.
 
 ---
 
