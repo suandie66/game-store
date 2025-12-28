@@ -264,16 +264,10 @@ Fitur intelijen bisnis yang menyajikan data penjualan dalam bentuk visual.
 
 ---
 
-### Jelajahi Akun Pengguna
+### Jelajahi Akun 
 
 ![Jelajahi Akun](img/menu_jelajahi_akun.png)
 
-Fitur sosial untuk melihat profil publik penjual beserta semua produk yang mereka tawarkan.
-
--   **Prasyarat:** Tidak ada, profil publik bisa diakses siapa saja.
--   **Detail Elemen UI:**
-    -   **Info Profil:** Nama pengguna penjual.
-    -   **Galeri Listing Pengguna:** Etalase mini khusus untuk produk-produk dari satu penjual.
 -   **Alur Proses &amp; Hasil:**
-    1.  Pengguna mengklik nama penjual di halaman detail produk.
-    2.  Pengguna diarahkan ke halaman profil penjual untuk melihat semua penawarannya.
+    1.  Pengguna mengklik jelajahi akun di halaman beranda.
+    2.  Pengguna diarahkan ke halaman jelajah akun yang dujual.
