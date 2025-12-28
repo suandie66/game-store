@@ -155,7 +155,6 @@ Saat melihat listing milik sendiri, pengguna diberikan alat untuk mengelolanya s
 
 Halaman ini adalah pandangan mendalam terhadap satu item spesifik, memberikan informasi yang kaya dan lengkap kepada calon pembeli.
 
--   **Prasyarat:** Tidak ada. Halaman ini publik.
 -   **Detail Elemen UI:**
     -   **Gambar Produk:** Tampilan besar dari gambar sampul game.
     -   **Informasi Penjual:** Nama penjual ditampilkan, berfungsi sebagai link ke profil publiknya.
